@@ -131,3 +131,16 @@ func TestCheckEmailMatrix(t *testing.T) {
 		})
 	}
 }
+
+// check if we can use slice package
+func BenchmarkSum(b *testing.B) {
+    for b.Loop() {
+        _ = logic.Sum(2, 3, 4, 5, 6, 7, 8, 9, 10)
+    }
+}
+
+func BenchmarkCheckEmail(b *testing.B) {
+	for b.Loop() {
+		_ = logic.CheckEmail("test@test.com")
+	}
+}
