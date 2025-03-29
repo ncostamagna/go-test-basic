@@ -1,8 +1,9 @@
-package logic
+package logic_test
 
 import (
 	"testing"
 	"github.com/stretchr/testify/assert"
+	"github.com/ncostamagna/go-test-basic/internal/logic"
 	"fmt"
 	"os"
 )
@@ -15,19 +16,19 @@ func TestMain(m *testing.M) {
 }
 
 func TestSum(t *testing.T) {
-	result := Sum(2, 3)
+	result := logic.Sum(2, 3)
 	expected := 5
 
 	assert.Equal(t, expected, result)
 
-	result = internalSum(1, 2, 3, 4, 5)
+	result = logic.Sum(1, 2, 3, 4, 5)
 	expected = 15
 
 	assert.Equal(t, expected, result)
 }
 
 func TestCheckEmail(t *testing.T) {
-	result := CheckEmail("test@test.com")
+	result := logic.CheckEmail("test@test.com")
 	expected := true
 
 	assert.Equal(t, expected, result)
@@ -68,7 +69,7 @@ func TestSumMatrix(t *testing.T) {
 	
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
-			result := Sum(c.input...)
+			result := logic.Sum(c.input...)
 			assert.Equal(t, c.expected, result)
 		})
 	}
@@ -125,7 +126,7 @@ func TestCheckEmailMatrix(t *testing.T) {
 
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
-			result := CheckEmail(c.input)
+			result := logic.CheckEmail(c.input)
 			assert.Equal(t, c.expected, result)
 		})
 	}
