@@ -21,7 +21,7 @@ func CheckEmail(email string) bool {
 	// - At least one character for domain name
 	// - At least one dot in the domain part
 	// - At least two characters after the last dot (TLD)
-	pattern := `^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$`
+ 	pattern := `^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*\.[a-zA-Z]{2,}$`
 
 	// Compile the regular expression
 	re, err := regexp.Compile(pattern)
