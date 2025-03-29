@@ -3,6 +3,10 @@ package logic
 import "regexp"
 
 func Sum(n ...int) int {
+	return internalSum(n...)
+}
+
+func internalSum(n ...int) int {
 	var total int
 	for _, v := range n {
 		total += v
