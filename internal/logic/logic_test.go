@@ -3,7 +3,16 @@ package logic
 import (
 	"testing"
 	"github.com/stretchr/testify/assert"
+	"fmt"
+	"os"
 )
+
+func TestMain(m *testing.M) {
+	fmt.Println("Starting tests...")
+	exitCode := m.Run()
+	fmt.Println("Tests finished")
+	os.Exit(exitCode)
+}
 
 func TestSum(t *testing.T) {
 	result := Sum(2, 3)
