@@ -26,5 +26,8 @@ func internalSum(n ...int) int {
 }
 
 func CheckEmail(email string) bool {
+	if email == "" {
+		return false
+	}
 	return emailRegex.MatchString(email)
 }
