@@ -133,6 +133,11 @@ func TestCheckEmailMatrix(t *testing.T) {
 			input: "nahuel@test.com.ar",
 			expected: true,
 		},
+		{
+			name: "check empty email",
+			input: "",
+			expected: false,
+		},
 	}
 
 	for _, c := range cases {
@@ -151,7 +156,7 @@ func BenchmarkSum(b *testing.B) {
 
 func BenchmarkCheckEmail(b *testing.B) {
 	for b.Loop() {
-		_ = logic.CheckEmail("test@test.com")
+		_ = logic.CheckEmail("")
 	}
 }
 

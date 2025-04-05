@@ -6,3 +6,7 @@ run:
 
 bench:
 	go test ./... -bench=.
+
+cover:
+	go test ./... -coverprofile=coverage.out
+	go tool cover -html=coverage.out -o coverage.html
